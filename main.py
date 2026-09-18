@@ -176,7 +176,11 @@ def get_price_intelligence(price, lowest_price, previous_price, history_count):
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = BASE_DIR.parent / "database" / "huntdeal.db"
+
+DB_PATH = BASE_DIR / "database" / "huntdeal.db"
+
+if not DB_PATH.exists():
+    DB_PATH = BASE_DIR.parent / "database" / "huntdeal.db"
 
 
 # ============================================================
